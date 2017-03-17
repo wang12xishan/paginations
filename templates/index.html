@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css">
+</head>
+<body>
+{#    <ul>#}
+{##}
+{#        {% for user in user_list %}#}
+{#            <li>{{ user.root }}{{ user.num}}</li>#}
+{#        {% endfor %}#}
+{##}
+{#    </ul>#}
+{#    {% include "incude/pager.html" %}#}
+{#    <ul>#}
+{#    {% for foo in posts.object_list  %}#}
+{#        <li>#}
+{#            {{ foo.root }}{{ foo.num }}#}
+{#        </li>#}
+{#    {% endfor %}#}
+{##}
+{#    {% if posts.has_previous %}#}
+{#        <a href="/index1?p={{ posts.previous_page_number }}">上一页</a>#}
+{#        {% else %}#}
+{#        <a href="javascript:void (0);">上一页</a>#}
+{#        <a href="#"></a>#}
+{#    {% endif %}#}
+{#    <span>#}
+{#        {% for post in posts.paginator.pager_count_range %}#}
+{#            {% if post == posts.paginator.current_page  %}#}
+{#                <li><a style="font-size: 40px" href="/index1?p={{ post}}">{{ post }}</a></li>#}
+{#                {% else %}#}
+{#                <li><a href="/index1?p={{ post}}">{{ post }}</a></li>#}
+{#            {% endif %}#}
+{##}
+{#        {% endfor %}#}
+{##}
+{#    </span>#}
+{#    {% if page_obj.has_next %}#}
+{#        <a href="/index1?p={{ page_obj.next_page_number }}">下一页</a>#}
+{#    {% endif %}#}
+{#    </ul>#}
+
+    <ul>
+        {% for f in data %}
+            <li>{{ f.root }}{{ f.num }}</li>
+        {% endfor %}
+
+    </ul>
+
+
+
+    <ul class="pagination">
+        {{ page_obj.str_page|safe }}
+    </ul>
+</body>
+</html>

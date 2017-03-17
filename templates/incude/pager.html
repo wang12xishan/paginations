@@ -1,0 +1,25 @@
+<ul>
+
+    {% for foo in posts.object_list  %}
+        <li>
+            {{ foo.root }}{{ foo.num }}
+        </li>
+
+    {% endfor %}
+    {% if posts.has_previous %}
+        <a href="/index?p={{ post.pervous_page_number }}">上一页</a>
+        {% else %}
+        <a href="javascript:void (0);"></a>
+    {% endif %}
+    <span>
+        {{ post.number }}{{ post.paginator.num_pages }}
+    </span>
+    {% if posts.has_next %}
+        <a href="/index?p={{ post.next_page_number }}">上一页</a>
+    {% endif %}
+
+
+
+
+
+</ul>
